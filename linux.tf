@@ -68,7 +68,7 @@ resource "azurerm_public_ip" "linux_vm" {
   resource_group_name = azurerm_resource_group.main_rg.name
   location            = azurerm_resource_group.main_rg.location
   allocation_method   = "Dynamic"
-  domain_name_label   = "tietoproject-${count.index}-vm"
+  domain_name_label   = "tietoproject-${random_string.prefix.result}-${count.index}-vm"
 
   tags = {
     Environment = var.environment,
