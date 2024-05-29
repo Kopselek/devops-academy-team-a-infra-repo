@@ -1,0 +1,24 @@
+services:
+
+  prometheus:
+    build: ./prometheus
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    networks:
+      - monitoring
+
+  grafana:
+    build: ./grafana
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
