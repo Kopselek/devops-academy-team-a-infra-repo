@@ -27,3 +27,9 @@ Prerequisites:
 
  - Remember that ports have to be unlocked
  - you need docker installed on machine that will host prometheus and grafana
+
+Export:
+During export, enable the "Export for sharing externally" option to remove installation-specific references, making it easier to import the dashboard into another Grafana setup. This ensures the dashboard is universally compatible, enhancing flexibility in monitoring configurations across different environments.
+
+New machine:
+If you create a new machine, remember about changing ip's in dashboard-provider.json. Don't change the port in this file.
